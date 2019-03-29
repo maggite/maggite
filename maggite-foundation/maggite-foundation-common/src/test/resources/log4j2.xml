@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
     <Properties>
-        <Property name="baseDir">logs</Property>
+        <Property name="baseDir">../../logs</Property>
     </Properties>
     <Appenders>
         <RollingFile name="DEBUG" fileName="${baseDir}/debug/debug.log" filePattern="logs/debug/debug-%i.log"

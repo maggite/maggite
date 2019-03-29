@@ -1,7 +1,6 @@
 package com.maggite.common.log;
 
 import com.maggite.common.log.log4j2.impl.*;
-import com.qwan.common.log.log4j2.impl.*;
 
 public final class LoggerFactory
 {

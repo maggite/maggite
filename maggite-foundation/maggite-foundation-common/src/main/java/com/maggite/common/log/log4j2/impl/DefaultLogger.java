@@ -1,7 +1,6 @@
 package com.maggite.common.log.log4j2.impl;
 
 import com.maggite.common.log.*;
-import com.qwan.common.log.*;
 import org.apache.logging.log4j.spi.LoggerContext;
 
 /**
