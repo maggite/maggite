@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
 					  http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.app</groupId>
+    <groupId>com.app.maggite</groupId>
     <artifactId>maggite</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -31,28 +31,38 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.app</groupId>
-                <artifactId>core</artifactId>
+                <groupId>com.app.maggite</groupId>
+                <artifactId>maggite-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.app</groupId>
-                <artifactId>foundation</artifactId>
+                <groupId>com.app.maggite</groupId>
+                <artifactId>maggite-foundation</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.app</groupId>
-                <artifactId>auth</artifactId>
+                <groupId>com.app.maggite</groupId>
+                <artifactId>maggite-foundation-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.app</groupId>
-                <artifactId>service</artifactId>
+                <groupId>com.app.maggite</groupId>
+                <artifactId>maggite-foundation-uconfig</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.app</groupId>
-                <artifactId>starter</artifactId>
+                <groupId>com.app.maggite</groupId>
+                <artifactId>maggite-auth</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.app.maggite</groupId>
+                <artifactId>maggite-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.app.maggite</groupId>
+                <artifactId>maggite-starter</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

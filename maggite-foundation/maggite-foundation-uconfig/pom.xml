@@ -4,27 +4,23 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
         <groupId>com.app.maggite</groupId>
-        <artifactId>maggite</artifactId>
+        <artifactId>maggite-foundation</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-	<artifactId>maggite-service</artifactId>
+	<artifactId>maggite-foundation-uconfig</artifactId>
 	<packaging>jar</packaging>
 
-	<name>maggite-service</name>
-	<description>Maggite Service</description>
+	<name>maggite-foundation-uconfig</name>
+	<description>Maggite Foundation Uconfig</description>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
+			<groupId>com.app.maggite</groupId>
+			<artifactId>maggite-foundation-common</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
 		</dependency>
 	</dependencies>
 </project>
