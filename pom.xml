@@ -8,6 +8,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>maggite-base</module>
         <module>maggite-core</module>
         <module>maggite-foundation</module>
         <module>maggite-auth</module>
@@ -30,6 +31,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.app.maggite</groupId>
+                <artifactId>maggite-base</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.app.maggite</groupId>
                 <artifactId>maggite-core</artifactId>

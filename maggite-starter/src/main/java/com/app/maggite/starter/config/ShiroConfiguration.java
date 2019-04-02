@@ -1,6 +1,6 @@
 /*
  * 文件名：ShiroConfiguration.java
- * 版权：Copyright 2018-2020 foundation Tech. Co. Ltd. All Rights Reserved. 
+ * 版权：Copyright 2018-2020 foundation Tech. Co. Ltd. All Rights Reserved.
  * 描述： ShiroConfiguration.java
  * 修改人：Administrator
  * 修改时间：2018/4/27
@@ -33,7 +33,7 @@ import java.util.Map;
  * @author Administrator
  * @version foundation V001R001 2018/4/27
  */
-@Configuration
+// @Configuration
 public class ShiroConfiguration
 {
     /**
@@ -53,20 +53,21 @@ public class ShiroConfiguration
         shiroFilterFactoryBean.setSecurityManager(securityManager);
 
         // 如果不设置默认会自动寻找Web工程根目录下的"/login.jsp"页面
-        shiroFilterFactoryBean.setLoginUrl("/login");
+        shiroFilterFactoryBean.setLoginUrl("/login.html");
         // 登录成功后要跳转的链接
         shiroFilterFactoryBean.setSuccessUrl("/index");
         // 未授权界面;
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");
 
         //自定义拦截器
-        Map<String, Filter> filtersMap = new LinkedHashMap<String, Filter>();
+        Map<String, Filter> filtersMap = new LinkedHashMap<>();
+
         //限制同一帐号同时在线的个数。
         //filtersMap.put("kickout", kickoutSessionControlFilter());
         shiroFilterFactoryBean.setFilters(filtersMap);
 
         // 权限控制map.
-        Map<String, String> filterChainDefinitionMap = new LinkedHashMap<String, String>();
+        Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
         // 配置不会被拦截的链接 顺序判断
         // 配置退出过滤器,其中的具体的退出代码Shiro已经替我们实现了
         // 从数据库获取动态的权限
@@ -82,8 +83,18 @@ public class ShiroConfiguration
                     sysPermissionInit.getPermissionInit());
         }*/
 
-        shiroFilterFactoryBean
-            .setFilterChainDefinitionMap(filterChainDefinitionMap);
+        //登出
+        filterChainDefinitionMap.put("/logout", "logout");
+        filterChainDefinitionMap.put("/login.html", "anon");
+        filterChainDefinitionMap.put("/login", "anon");
+
+        //对所有用户认证
+        filterChainDefinitionMap.put("/**", "authc");
+        shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
+
+        //错误页面，认证不通过跳转
+        shiroFilterFactoryBean.setUnauthorizedUrl("/error");
+
         return shiroFilterFactoryBean;
     }
 
