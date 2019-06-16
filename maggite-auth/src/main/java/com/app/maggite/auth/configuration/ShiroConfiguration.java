@@ -1,25 +1,39 @@
 package com.app.maggite.auth.configuration;
 
 import com.app.maggite.auth.realm.AbstractAuthRealm;
+import com.app.maggite.auth.realm.DefaultAuthzProvider;
+import com.app.maggite.auth.realm.IAuthzProvider;
 import com.app.maggite.auth.realm.SimpleDbAuthRealm;
 import org.apache.shiro.mgt.SecurityManager;
-import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Configuration;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@Component
+@Configuration
 public class ShiroConfiguration
 {
+    @Autowired
+    private IAuthzProvider provider;
+
+    @Bean
+    @ConditionalOnMissingBean(IAuthzProvider.class)
+    public IAuthzProvider authzProvider()
+    {
+        this.provider = new DefaultAuthzProvider();
+        return provider;
+    }
+
     public AbstractAuthRealm defaultShiroRealm()
     {
         // return new DefaultShiroRealm();
-        return new SimpleDbAuthRealm();
+        return new SimpleDbAuthRealm(provider);
     }
 
     /**

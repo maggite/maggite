@@ -1,6 +1,6 @@
 /*
  * 文件名：IMenuDAO.java
- * 版权：Copyright 2018-2020 foundation Tech. Co. Ltd. All Rights Reserved. 
+ * 版权：Copyright 2018-2020 foundation Tech. Co. Ltd. All Rights Reserved.
  * 描述： IMenuDAO.java
  * 修改人：Administrator
  * 修改时间：2018/5/15
@@ -9,7 +9,7 @@ package com.app.maggite.starter.dao;
 
 import com.app.maggite.starter.domain.Menu;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -23,7 +23,7 @@ import java.util.List;
  * @author Administrator
  * @version foundation V001R001 2018/5/15
  */
-@Component
+@Repository
 @Mapper
 public interface IMenuDAO
 {

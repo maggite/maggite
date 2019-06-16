@@ -1,14 +1,15 @@
 /*
  * 文件名：QwanWebAutoConfiguration.java
- * 版权：Copyright 2018-2020 foundation Tech. Co. Ltd. All Rights Reserved. 
+ * 版权：Copyright 2018-2020 foundation Tech. Co. Ltd. All Rights Reserved.
  * 描述： QwanWebAutoConfiguration.java
  * 修改人：Administrator
  * 修改时间：2018/5/7
  */
 package com.app.maggite.starter.autoconfig;
 
+import com.app.maggite.auth.realm.IAuthzProvider;
+import com.app.maggite.starter.auth.authz.JdbcAuthzProvider;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -24,7 +25,11 @@ import org.springframework.context.annotation.Configuration;
  * @version foundation V001R001 2018/5/7
  */
 @Configuration
-@ComponentScan({"com.app.maggite.starter.dao"})
 public class StarterAutoConfiguration
 {
+    @Bean
+    public IAuthzProvider authzProvider()
+    {
+        return new JdbcAuthzProvider();
+    }
 }
