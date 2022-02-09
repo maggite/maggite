@@ -22,7 +22,7 @@
         <log4j2.version>2.11.2</log4j2.version>
         <spring.boot.version>2.1.7.RELEASE</spring.boot.version>
         <spring.version>5.1.9.RELEASE</spring.version>
-        <spring.shiro.version>1.4.0</spring.shiro.version>
+        <spring.shiro.version>1.7.1</spring.shiro.version>
         <mybatis.version>3.5.2</mybatis.version>
         <commons.logging.version>1.2</commons.logging.version>
         <druid.version>1.1.9</druid.version>
